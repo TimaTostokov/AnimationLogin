@@ -11,7 +11,9 @@ import jolchu.tolik.animationlogin.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
     private val stateMachineName = "Login Machine"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -71,9 +73,7 @@ class MainActivity : AppCompatActivity() {
         })
 
         binding.button.setOnClickListener {
-
             binding.passsword.clearFocus()
-
             Handler(mainLooper).postDelayed({
                 if (binding.email.text!!.isNotEmpty() && binding.passsword.text!!.isNotEmpty() &&
                     (binding.email.text.toString() == "admin@gmail.com" && binding.passsword.text.toString() == "123456")
